@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="SampleApp">
+  <head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Angular-Gulp-Browserify-Starter</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+  </head>
+  <body>
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+      <a class="navbar-brand" ui-sref="#">WebCodeGeeks AngularJS UI-Router Example</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a ui-sref="posts">Posts</a></li>
+      <li><a ui-sref="authors">Authors</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+
+    <!-- ui-view attribute is the indicator where to inject the views managed by AngularJS UI-Router -->
+    <div ui-view></div>
+
+  </div>
+    <!-- scripts -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controller/MainController.js"></script>
+  </body>
+</html>
