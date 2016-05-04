@@ -9,7 +9,7 @@
         .controller('appCtrl', [
             '$scope','$window', '$stateParams','currentDetails',
             function($scope,$window, $stateParams,currentDetails) {
-                $scope.id = 1;
+                $scope.updatedList =currentDetails;
 
 
 
