@@ -49,13 +49,19 @@
 
             .state('home', {
                 url: '/home',
+                data:{
+                    customData1:  "customedata1",
+                    customData2:  "customedata2"
+                },
                 templateUrl: '../partials/partial1.html'
             })
             .state('home.one', {
                 url: '/one',
                 templateUrl: '../partials/partial2.html',
-                controller: function($scope) {
+                controller: function($scope,$state) {
                     $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
+                    console.log($state.current.data.customData1);
+                    $scope.dataReceived=$state.current.data.customData1;
                 }
             })
             .state('home.two', {
@@ -63,7 +69,14 @@
                 template: '<h1>Home Two state page</h1>'
             });
     }
-  ]);
+  ])
+    .run(['$state','$rootScope', function($state,$rootScope) {
+        $rootScope.$on('$stateChangeStart', function(event, toState){
+            var passedObj = toState.data.customData1 + " " + toState.data.customData2;
+            console.log(passedObj);
+
+        });
+    }]);
 
 
 
