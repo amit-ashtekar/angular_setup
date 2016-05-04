@@ -53,13 +53,22 @@
                     customData1:  "customedata1",
                     customData2:  "customedata2"
                 },
+                resolve: {
+                    person: function() {
+                        return {
+                            name: "Amit",
+                            email: "amit.ashtekar@synerzip.com"
+                        };
+                    }
+
+                },
                 templateUrl: '../partials/partial1.html'
             })
             .state('home.one', {
                 url: '/one',
                 templateUrl: '../partials/partial2.html',
-                controller: function($scope,$state) {
-                    $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
+                controller: function($scope,$state,person) {
+                    $scope.dogs = person;
                     console.log($state.current.data.customData1);
                     $scope.dataReceived=$state.current.data.customData1;
                 }
