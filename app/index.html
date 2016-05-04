@@ -3,8 +3,7 @@
   <head lang="en">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  
     <title>Angular Setup for PDX</title>
     <!-- styles -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
@@ -20,28 +19,29 @@
     <ul class="nav navbar-nav">
       <li>
         <a 	href="#" title="left"
-              ng-class="{active:transition=='slide-left'}" 		ng-click="left()">
+              ng-class="{active:transition=='slide-left'}" 		ng-click="left('tab1')">
           Left
         </a>
       </li>
       <li>
         <a 	href="#" title="right"
-              ng-class="{'active':transition=='slide-right'}" 	ng-click="right()">
+              ng-class="{'active':transition=='slide-right'}" 	ng-click="right('tab2')">
           Right
         </a>
       </li>
       <li>
         <a 	href="#" title="top"
-              ng-class="{'active':transition=='slide-top'}" 		ng-click="top()">
+              ng-class="{'active':transition=='slide-top'}" 		ng-click="top('tab3')">
           Top
         </a>
       </li>
       <li>
         <a 	href="#" title="bottom"
-              ng-class="{'active':transition=='slide-bottom'}" 	ng-click="bottom()">
+              ng-class="{'active':transition=='slide-bottom'}" 	ng-click="bottom('tab4')">
           Bottom
         </a>
       </li>
+      <li><a ui-sref="home">Home</a></li>
     </ul>
   </nav>
 
