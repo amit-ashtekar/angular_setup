@@ -36,6 +36,7 @@
             })
 
 
+
             .state('gotopage', {
                 url: '/gotopage',
                 template: '<h1>This Is A gotopage Page</h1>'
@@ -45,6 +46,7 @@
                 controller:'gotopageCtrl',
                 template: '<h1>This Is A gotopage with Following Params:id:{{id}} and location:{{location}}</h1>'
             })
+
 
 
             .state('home', {
@@ -76,13 +78,39 @@
             .state('home.two', {
                 url: '/two',
                 template: '<h1>Home Two state page</h1>'
+            })
+
+
+
+
+            .state('app', {
+                url: '/app',
+
+                resolve: {
+                    person: function() {
+                        return {
+                            name: "Amit",
+                            email: "amit.ashtekar@synerzip.com"
+                        };
+                    }
+
+                },
+                templateUrl: '../partials/partial3.html'
+            })
+            .state('app.one', {
+                url: '/one',
+                templateUrl: '../partials/partial4.html',
+                controller: 'appCtrl'
             });
+
     }
   ])
     .run(['$state','$rootScope', function($state,$rootScope) {
         $rootScope.$on('$stateChangeStart', function(event, toState){
-            var passedObj = toState.data.customData1 + " " + toState.data.customData2;
-            console.log(passedObj);
+            if(toState.data) {
+                var passedObj = toState.data.customData1 + " " + toState.data.customData2;
+                console.log(passedObj);
+            }
 
         });
     }]);

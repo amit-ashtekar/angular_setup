@@ -1,18 +1,18 @@
 /**
  * Created by amita on 5/4/2016.
  */
+
 (function () {
     'use strict';
     angular.module('SampleApp')
 
-        .controller('gotopageCtrl', [
+        .controller('appCtrl', [
             '$scope','$window', '$stateParams',
             function($scope,$window, $stateParams) {
-                $scope.id = $stateParams.id;
+                $scope.id = 1;
 
 
-                $scope.location = $stateParams.location;
-console.log($scope.id,$scope.location );
+
             }
         ]);
 }());
