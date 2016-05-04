@@ -7,8 +7,8 @@
     angular.module('SampleApp')
 
         .controller('appCtrl', [
-            '$scope','$window', '$stateParams',
-            function($scope,$window, $stateParams) {
+            '$scope','$window', '$stateParams','currentDetails',
+            function($scope,$window, $stateParams,currentDetails) {
                 $scope.id = 1;
 
 

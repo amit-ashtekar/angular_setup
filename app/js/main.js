@@ -87,11 +87,8 @@
                 url: '/app',
 
                 resolve: {
-                    person: function() {
-                        return {
-                            name: "Amit",
-                            email: "amit.ashtekar@synerzip.com"
-                        };
+                    currentDetails: function(DataFactory) {
+                        return  DataFactory.LoadData();
                     }
 
                 },
