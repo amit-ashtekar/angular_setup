@@ -5,29 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Angular-Gulp-Browserify-Starter</title>
+    <title>Angular Setup for PDX</title>
     <!-- styles -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css"/>
     <link rel="stylesheet" href="bower_components/animate.css/animate.css"/>
     <link rel="stylesheet" href="css/main.css"/>
   </head>
-  <body>
+  <body ng-controller="MainController">
   <nav class="navbar navbar-inverse" role="navigation">
     <div class="navbar-header">
-      <a class="navbar-brand" ui-sref="#">WebCodeGeeks AngularJS UI-Router Example</a>
+      <a class="navbar-brand" ui-sref="#">Your Project name</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a ui-sref="posts">Posts</a></li>
-      <li><a ui-sref="authors">Authors</a></li>
+      <li>
+        <a 	href="#" title="left"
+              ng-class="{active:transition=='slide-left'}" 		ng-click="left()">
+          Left
+        </a>
+      </li>
+      <li>
+        <a 	href="#" title="right"
+              ng-class="{'active':transition=='slide-right'}" 	ng-click="right()">
+          Right
+        </a>
+      </li>
+      <li>
+        <a 	href="#" title="top"
+              ng-class="{'active':transition=='slide-top'}" 		ng-click="top()">
+          Top
+        </a>
+      </li>
+      <li>
+        <a 	href="#" title="bottom"
+              ng-class="{'active':transition=='slide-bottom'}" 	ng-click="bottom()">
+          Bottom
+        </a>
+      </li>
     </ul>
   </nav>
 
-  <div class="container">
+  <div >
+    <header>
+      <h1>Welcome All</h1>
+    </header>
 
-    <!-- ui-view attribute is the indicator where to inject the views managed by AngularJS UI-Router -->
-    <div ui-view></div>
 
+   <p> <a ui-sref="gotopage">Go To Page</a></p>
+   <p> <a ui-sref="gotopagewithparam({ id: '1', location: 'mylocation' })">Go To Page with Params</a></p>
+
+    <div class="content">
+      <div ui-view ng-class="transition">
+        default content
+      </div>
+    </div>
   </div>
     <!-- scripts -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -37,5 +68,6 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="js/main.js"></script>
     <script src="js/controller/MainController.js"></script>
+  <script src="js/controller/gotopage.js"></script>
   </body>
 </html>
